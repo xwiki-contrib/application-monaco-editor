@@ -24,31 +24,21 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.xwiki.contrib</groupId>
-    <artifactId>parent-platform</artifactId>
-    <version>10.8.3</version>
+    <artifactId>application-monaco-editor</artifactId>
+    <version>1.0-SNAPSHOT</version>
   </parent>
-  <artifactId>application-monaco-editor</artifactId>
-  <version>1.0-SNAPSHOT</version>
-  <name>Monaco Editor Application - Parent POM</name>
-  <packaging>pom</packaging>
-  <description>Integrates the Monaco Editor within XWiki</description>
-  <scm>
-    <connection>scm:git:git://github.com/xwiki-contrib/application-monaco-editor.git</connection>
-    <developerConnection>scm:git:git@github.com:xwiki-contrib/application-monaco-editor.git</developerConnection>
-    <url>https://github.com/xwiki-contrib/application-monaco-editor/tree/master</url>
-    <tag>HEAD</tag>
-  </scm>
-  <developers>
-    <developer>
-      <id>aubincleme</id>
-      <name>Clément Aubin</name>
-    </developer>
-  </developers>
-  <properties>
-    <monaco.version>0.18.1</monaco.version>
-    <xwiki.extension.category>application</xwiki.extension.category>
-    <xwiki.release.jira.skip>false</xwiki.release.jira.skip>
-    <xwiki.issueManagement.system>jira</xwiki.issueManagement.system>
-    <xwiki.issueManagement.url>https://jira.xwiki.org/browse/MONACO</xwiki.issueManagement.url>
-  </properties>
+  <artifactId>application-monaco-editor-ui</artifactId>
+  <name>Monaco Editor Application - UI</name>
+  <packaging>xar</packaging>
+  <description>Configuration pages for the integration of the Monaco Editor within XWiki</description>
+  <dependencies>
+    <!-- Depend on the Monaco Editor WebJar -->
+    <dependency>
+      <groupId>org.webjars.npm</groupId>
+      <artifactId>monaco-editor</artifactId>
+      <version>${monaco.version}</version>
+      <scope>runtime</scope>
+    </dependency>
+  </dependencies>
 </project>
+
